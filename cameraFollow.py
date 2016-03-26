@@ -78,9 +78,8 @@ try:
         print('starting camera')
         with FollowLight(camera) as output:
             camera.resolution = (320, 240)
-            camera.start_recording(
-                  '/dev/null', format='yuv')
-            camera.wait_recording(10)
+            camera.start_recording(output, format='yuv')
+            camera.wait_recording(3)
             camera.stop_recording()
 
 except KeyboardInterrupt:
