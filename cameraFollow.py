@@ -73,8 +73,7 @@ try:
         camera.vflip = True
         with FollowLight(camera) as output:
             camera.resolution = (320, 240)
-            camera.start_recording(
-                  '/dev/null', format='yuv')
+            camera.start_recording(output, format='yuv')
             camera.wait_recording(2)
             camera.stop_recording()
 
