@@ -20,8 +20,11 @@ tiltId = 1
 panVal = 0
 tiltVal = 0
 
+print('resetting servos...')
 robohat.setServo(panId, panVal)
 robohat.setServo(tiltId, tiltVal)
+print('...servos reset')
+
 def panDown():
     global panVal, panId
     panVal = max(-max_range, panVal-step_size)
@@ -46,6 +49,7 @@ def tiltLeft():
 
 class FollowLight(picamera.array.PiYUVAnalysis):
     def analyse(self, a):
+        print('analysing')
         intensities = a[:, :, 0]
         max_index = np.unravel_index(intensities.argmax(), intensities.shape)
         width = intensities.shape[1]
@@ -53,7 +57,7 @@ class FollowLight(picamera.array.PiYUVAnalysis):
         x = max_index[1]
         y = max_index[0]
         print(x, y)
-        """if x < (width / 2):
+        if x < (width / 2):
             tiltLeft()
             print "Left"
         else:
@@ -64,23 +68,23 @@ class FollowLight(picamera.array.PiYUVAnalysis):
             print "Up"
         else:
             panDown()
-            print "Down" """
+            print "Down"
 
 
 try:
     with picamera.PiCamera(framerate=5) as camera:
         camera.hflip = True
         camera.vflip = True
+        print('starting camera')
         with FollowLight(camera) as output:
             camera.resolution = (320, 240)
             camera.start_recording(
                   '/dev/null', format='yuv')
-            camera.wait_recording(2)
+            camera.wait_recording(10)
             camera.stop_recording()
 
 except KeyboardInterrupt:
     robohat.setServo(tiltId, 0)
     robohat.setServo(panId, 0)
-
 finally:
     robohat.cleanup()
