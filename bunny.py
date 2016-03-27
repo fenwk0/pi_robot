@@ -50,27 +50,33 @@ def tiltLeft():
     robohat.setServo(tiltId, tiltVal)
 
 def wallAvoid():
-    speed = 80
-
+    print('Starting wall avoid')
+    speed = 100
+    time_end = time.time() + 4
     # main loop
     try:
-        while True:
-            rightSensor = robohat.irRight()
-            leftSensor = robohat.irLeft()
-            print "right:{0}, left:{1}".format(rightSensor, leftSensor)
-            if rightSensor and leftSensor:
-                robohat.spinLeft(speed)
-                time.sleep(1)
-            elif rightSensor:
-                robohat.spinLeft(speed)
-                time.sleep(0.2)
-                print('Turn Left')
-            elif leftSensor == True:
-                robohat.spinRight(speed)
-                time.sleep(0.2)
-                print('Turn Right')
-            else:
-                robohat.forward(speed)
+       for i in range(2):
+            time_end = time.time() + 6
+            while time.time() < time_end:
+                rightSensor = robohat.irRight()
+                leftSensor = robohat.irLeft()
+                if rightSensor and leftSensor:
+                    robohat.spinLeft(speed)
+                    time.sleep(1)
+                elif rightSensor:
+                    robohat.spinLeft(speed)
+                    time.sleep(0.2)
+                elif leftSensor == True:
+                    robohat.spinRight(speed)
+                    time.sleep(0.2)
+                else:
+                    robohat.forward(speed)
+            robohat.forward(0)
+            time.sleep(3)
+            robohat.forward(speed)
+            time.sleep(0.2)
+            robohat.spinLeft(speed)
+            time.sleep(4)
 
     except KeyboardInterrupt:
         robohat.stop()
@@ -101,7 +107,8 @@ class FollowLight(picamera.array.PiYUVAnalysis):
 
 
 try:
-    thread.start_new_thread(wallAvoid, ("Thread-2", 4,))
+    thread.start_new_thread(wallAvoid, ())
+    time.sleep(5)
     with picamera.PiCamera(framerate=10) as camera:
         camera.hflip = True
         camera.vflip = True
