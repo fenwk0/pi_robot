@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a92eddf9-a374-49f4-9ebb-406840770a89" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bunny.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/followFace.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pi_robot.iws" />
@@ -27,8 +27,8 @@
       <file leaf-file-name="cameraFollow.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cameraFollow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="10" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -56,13 +56,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bunny.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bunny.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bunny.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
+            <state relative-caret-position="373">
+              <caret line="105" column="21" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="21" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="followFace.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/followFace.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="77" column="22" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,6 +102,7 @@
       <list>
         <option value="$PROJECT_DIR$/cameraFollow.py" />
         <option value="$PROJECT_DIR$/bunny.py" />
+        <option value="$PROJECT_DIR$/followFace.py" />
       </list>
     </option>
   </component>
@@ -364,20 +377,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bunny.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="105" column="21" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cameraFollow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="10" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bunny.py">
+    <entry file="file://$PROJECT_DIR$/followFace.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
+        <state relative-caret-position="163">
+          <caret line="77" column="22" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
